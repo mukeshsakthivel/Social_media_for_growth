@@ -33,3 +33,14 @@ CREATE TABLE user_photos (
 
 alter table user_photos add column like_count int default 0;
 
+create table user_like(
+		user_like int primary key auto_increment,
+        user_id int,
+        photo_id int,
+        liked boolean ,
+        FOREIGN KEY (user_id) REFERENCES Register(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (photo_id) REFERENCES user_photos(photo_id) ON DELETE CASCADE,
+    UNIQUE (user_id, photo_id) );
+
+
+
