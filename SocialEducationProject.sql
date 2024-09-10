@@ -6,7 +6,6 @@ select database()
 DESCRIBE Register;
 create table Register (user_id int auto_increment primary key not null ,username varchar(20) not null,password varchar(20) not null,email   varchar(50) not null ,user_career_role varchar(20) not null)
 
-
 describe  Register;
 Alter table Register add column followers_count int default 0,add column following_count int default 0; 
 
@@ -19,8 +18,6 @@ CREATE TABLE user_relationships (
     FOREIGN KEY (user_id) REFERENCES Register(user_id) ON DELETE CASCADE,
     FOREIGN KEY (related_user_id) REFERENCES Register(user_id) ON DELETE CASCADE
 );
-
-
 
 CREATE TABLE user_photos (
     photo_id INT PRIMARY KEY AUTO_INCREMENT,
